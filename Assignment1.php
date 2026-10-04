@@ -31,7 +31,7 @@ echo "Smallest: $smallest <br>";
 //divisible 
 echo "<br>";
 echo "<h3>Solution 2</h3>";
-$num = 45;
+$num = 76;
 
 if ($num % 3 == 0 && $num % 5 == 0) {
     echo "$num is divisible by both 3 and 5";
@@ -119,7 +119,7 @@ echo "<br>";
 <?php
 echo "<br>";
 echo "<h3>Solution 7</h3>";
-$a = 8;
+$a = 23;
 $b = 24;
 
 $hcf = 1;
@@ -206,41 +206,3 @@ for ($num = 10; $num <= 50; $num++) {
     }
 }
 ?>
-
-
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #f1f5f9;
-        padding: 25px;
-
-    }
-
-    h3 {
-        color: #2563eb;
-    }
-
-    table {
-        /* margin: 20px auto; */
-        border-collapse: collapse;
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    th {
-        background: #1e40af;
-        color: white;
-        padding: 10px 15px;
-    }
-
-    td {
-        border: 1px solid #ddd;
-        padding: 8px 15px;
-    }
-
-    tr:hover {
-        background: whitesmoke;
-    }
-</style>
-<title>10 assigments</title>

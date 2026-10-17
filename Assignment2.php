@@ -326,7 +326,20 @@ for ($i = 0; $i < 3; $i++) {
             foreach ($courses as $course):
                 $total = $course['CW1'] + $course['MidTerm'] + $course['CW2'] + $course['Final'];
                 $status = ($total >= 50) ? "Pass" : "Fail";
+
+                // Conditional Styling Logic
+                if ($total < 50) {
+                    $bg_color = "#ff4d4d"; // Red
+                    
+                } elseif ($total >= 50 && $total <= 60) {
+                    $bg_color = "#ffff00"; // Yellow
+                } else {
+                   
+                    $bg_color = "#28a745"; // Green
+                    
+                }
                 ?>
+
                 <tr>
                     <?php if ($first): ?>
                         <td rowspan="<?php echo $rowspan; ?>"><strong><?php echo $sem_name; ?></strong></td>
@@ -348,7 +361,7 @@ for ($i = 0; $i < 3; $i++) {
 
 </html>
 
-<style>
+<!-- <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: #f1f5f9;
@@ -382,4 +395,4 @@ for ($i = 0; $i < 3; $i++) {
     tr:hover {
         background: whitesmoke;
     }
-</style>
+</style> -->

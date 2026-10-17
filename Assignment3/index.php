@@ -107,10 +107,101 @@ function showError($key, $errors) {
     <title>Student Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #f2f5f9; }
-        .form-card { max-width: 1000px; margin: 35px auto; border: 0; border-radius: 16px; }
-        .section-title { color: #0d6efd; border-bottom: 2px solid #e8eef8; padding-bottom: 8px; margin: 24px 0 16px; }
-        label { font-weight: 500; }
+        :root {
+            --brand: #2457d6;
+            --brand-dark: #173b9b;
+            --page-bg: #f3f6fc;
+            --line: #e4eaf5;
+        }
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, #e5edff 0, transparent 36%),
+                        linear-gradient(135deg, #f7f9fe 0%, var(--page-bg) 100%);
+            color: #202b3c;
+        }
+        .form-card {
+            max-width: 1000px;
+            margin: 38px auto;
+            border: 1px solid rgba(226, 233, 245, .9);
+            border-radius: 22px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 20px 55px rgba(28, 55, 110, .12) !important;
+        }
+        .form-card .card-header {
+            border: 0;
+            background: linear-gradient(120deg, var(--brand-dark), #3979f6) !important;
+            padding: 32px 20px !important;
+        }
+        .form-card .card-header h2 {
+            font-weight: 750;
+            letter-spacing: -.5px;
+        }
+        .form-card .card-header p { color: rgba(255,255,255,.82); }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--brand-dark);
+            font-size: 1.12rem;
+            font-weight: 750;
+            border-bottom: 1px solid var(--line);
+            padding: 0 0 12px;
+            margin: 30px 0 20px;
+        }
+        .section-title::before {
+            content: "";
+            width: 5px;
+            height: 25px;
+            flex: 0 0 5px;
+            border-radius: 6px;
+            background: linear-gradient(180deg, #4c84ff, #2457d6);
+        }
+        .form-label { color: #344054; font-weight: 650; margin-bottom: 7px; }
+        .form-control, .form-select {
+            min-height: 45px;
+            border-color: #d8e0ed;
+            border-radius: 10px;
+            padding: 10px 13px;
+            background-color: #fbfcff;
+            transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #6793ff;
+            background-color: #fff;
+            box-shadow: 0 0 0 .22rem rgba(36, 87, 214, .12);
+        }
+        input[type="file"].form-control { padding: 7px 10px; }
+        .form-text { color: #758198; }
+        .alert-danger {
+            border: 1px solid #f5c5ca;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(180, 35, 24, .05);
+        }
+        .text-danger.small { font-weight: 500; }
+        .btn {
+            border-radius: 10px;
+            font-weight: 650;
+            padding: 11px 19px;
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .btn-primary {
+            border-color: var(--brand);
+            background: linear-gradient(120deg, var(--brand), #3979f6);
+            box-shadow: 0 6px 14px rgba(36, 87, 214, .18);
+        }
+        .btn-primary:hover {
+            border-color: var(--brand-dark);
+            background: linear-gradient(120deg, var(--brand-dark), var(--brand));
+            transform: translateY(-1px);
+        }
+        .btn-outline-secondary { border-color: #d4dbe7; color: #475467; }
+        @media (max-width: 576px) {
+            .form-card { margin: 18px auto; border-radius: 16px; }
+            .form-card .card-body { padding: 22px !important; }
+            .form-card .card-header { padding: 25px 16px !important; }
+            .form-card .card-header h2 { font-size: 1.55rem; }
+        }
     </style>
 </head>
 <body>

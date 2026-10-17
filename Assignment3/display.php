@@ -17,10 +17,69 @@ $imagePath = $data["Student image"];
     <title>Registered Student Information</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #f2f5f9; }
-        .result-card { max-width: 950px; margin: 40px auto; border: 0; border-radius: 16px; overflow: hidden; }
-        .student-photo { width: 115px; height: 115px; object-fit: cover; border-radius: 12px; }
-        th { width: 34%; background: #f3f6fa !important; }
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top right, #dff8ed 0, transparent 34%),
+                        linear-gradient(135deg, #f7f9fe 0%, #f1f5fb 100%);
+            color: #202b3c;
+        }
+        .result-card {
+            max-width: 950px;
+            margin: 40px auto;
+            border: 1px solid #e4eaf5;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 20px 55px rgba(28, 55, 110, .12) !important;
+        }
+        .result-card .card-header {
+            border: 0;
+            background: linear-gradient(120deg, #087f5b, #20a879) !important;
+            padding: 30px 20px !important;
+        }
+        .result-card .card-header h2 { font-weight: 750; letter-spacing: -.4px; }
+        .result-card .card-header p { color: rgba(255,255,255,.84); }
+        .student-photo {
+            width: 125px;
+            height: 125px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(16, 24, 40, .15);
+        }
+        .table {
+            border-color: #e1e8f2;
+            margin-bottom: 0;
+        }
+        .table thead th {
+            color: #173b9b;
+            background: #eaf0ff !important;
+            font-weight: 750;
+            padding: 14px 16px;
+        }
+        .table tbody th {
+            width: 34%;
+            color: #344054;
+            background: #f7f9fd !important;
+            font-weight: 650;
+        }
+        .table td, .table tbody th { padding: 13px 16px; }
+        .table-striped > tbody > tr:nth-of-type(odd) > * { --bs-table-bg-type: #fcfdff; }
+        .btn {
+            border-radius: 10px;
+            font-weight: 650;
+            padding: 10px 17px;
+        }
+        .btn-primary {
+            border-color: #2457d6;
+            background: linear-gradient(120deg, #2457d6, #3979f6);
+        }
+        .btn-primary:hover { background: #173b9b; border-color: #173b9b; }
+        @media (max-width: 576px) {
+            .result-card { margin: 18px auto; border-radius: 16px; }
+            .result-card .card-body { padding: 22px !important; }
+            .table td, .table tbody th { padding: 10px; }
+        }
     </style>
 </head>
 <body>

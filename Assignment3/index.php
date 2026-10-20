@@ -137,7 +137,7 @@ function showError($key, $errors)
 
         .form-card .card-header {
             border: 0;
-            background: linear-gradient(120deg, var(--brand-dark), #3979f6) !important;
+            background: linear-gradient(120deg, #2457d6, #3979f6) !important;
             padding: 32px 20px !important;
         }
 
@@ -168,8 +168,9 @@ function showError($key, $errors)
             height: 25px;
             flex: 0 0 5px;
             border-radius: 6px;
-            background: linear-gradient(180deg, #4c84ff, #2457d6);
+            background: linear-gradient(180deg, blue, white);
         }
+
 
         .form-label {
             color: #344054;
@@ -220,14 +221,14 @@ function showError($key, $errors)
         }
 
         .btn-primary {
-            border-color: var(--brand);
-            background: linear-gradient(120deg, var(--brand), #3979f6);
+            border-color: white;
+            background: linear-gradient(120deg, blue);
             box-shadow: 0 6px 14px rgba(36, 87, 214, .18);
         }
 
         .btn-primary:hover {
-            border-color: var(--brand-dark);
-            background: linear-gradient(120deg, var(--brand-dark), var(--brand));
+            border-color: white;
+            background: linear-gradient(120deg,white,blue);
             transform: translateY(-1px);
         }
 
@@ -404,7 +405,6 @@ function showError($key, $errors)
         </div>
     </div>
     <script>
-        // Move the user to the first field that has a validation error.
         document.addEventListener("DOMContentLoaded", function () {
             const firstError = document.querySelector(".is-invalid");
             const errorMessages = document.querySelector(".alert-danger");

@@ -62,7 +62,7 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Registration</title>
+    <title>Job Application</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -78,7 +78,7 @@ if (isset($_POST["submit"])) {
                 <div class="card shadow">
 
                     <div class="card-header bg-primary text-white text-center py-3">
-                        <h2 class="mb-0">Student Registration Form</h2>
+                        <h2 class="mb-0">Job Application Form</h2>
                     </div>
 
                     <div class="card-body">
@@ -181,86 +181,119 @@ if (isset($_POST["submit"])) {
                                     </div>
                                 </div>
 
-                                <!-- Faculty -->
+
+                                <!-- Position -->
                                 <div class="mb-3">
-                                    <label for="faculty" class="form-label">
-                                        Faculty
+                                    <label for="position" class="form-label">
+                                        Positions
                                     </label>
 
-                                    <select class="form-select" name="faculty" id="faculty">
-                                        <option value="computer" <?php
+                                    <select class="form-select" name="position" id="position">
+                                        <option value="web_developer" <?php
                                         if (
-                                            !$success && isset($_POST["faculty"])
-                                            && $_POST["faculty"] == "computer"
+                                            !$success && isset($_POST["position"])
+                                            && $_POST["position"] == "web_developer"
                                         ) {
                                             echo "selected";
                                         }
                                         ?>>
-            Computer and IT
+    Web Developer
                                         </option>
 
-                                        <option value="medicine" <?php
+                                        <option value="software_engineer" <?php
                                         if (
-                                            !$success && isset($_POST["faculty"])
-                                            && $_POST["faculty"] == "medicine"
+                                            !$success && isset($_POST["position"])
+                                            && $_POST["position"] == "software_engineer"
                                         ) {
                                             echo "selected";
                                         }
                                         ?>>
-                                        Medicine and Health Science
+    Software Engineer
                                         </option>
 
-                                        <option value="engineering" <?php
+                                        <option value="accountant" <?php
                                         if (
-                                            !$success && isset($_POST["faculty"])
-                                            && $_POST["faculty"] == "engineering"
+                                            !$success && isset($_POST["position"])
+                                            && $_POST["position"] == "accountant"
                                         ) {
                                             echo "selected";
                                         }
                                         ?>>
-           Engineering
+    Accountant
                                         </option>
 
-                                        <option value="ecom" <?php
+                                        <option value="hr_manager" <?php
                                         if (
-                                            !$success && isset($_POST["faculty"])
-                                            && $_POST["faculty"] == "ecom"
+                                            !$success && isset($_POST["position"])
+                                            && $_POST["position"] == "hr_manager"
                                         ) {
                                             echo "selected";
                                         }
                                         ?>>
-                                     Business
+            HR Manager
+                                        </option>
+
+                                        <option value="marketing_officer" <?php
+                                        if (
+                                            !$success && isset($_POST["position"])
+                                            && $_POST["position"] == "marketing_officer"
+                                        ) {
+                                            echo "selected";
+                                        }
+                                        ?>>
+    Marketing Officer
+                                        </option>
+
+                                        <option value="customer_service" <?php
+                                        if (
+                                            !$success && isset($_POST["position"])
+                                            && $_POST["position"] == "customer_service"
+                                        ) {
+                                            echo "selected";
+                                        }
+                                        ?>>
+    Customer Service Representative
                                         </option>
                                     </select>
                                 </div>
 
-                                <!-- Languages -->
+
+                                <!-- Skills -->
                                 <div class="mb-3">
-                                    <label class="form-label d-block">Languages</label>
+                                    <label class="form-label d-block">Skills</label>
 
                                     <?php
-                                    $languages = ["Somali", "English", "Arabic", "Chinese"];
+                                    $skills = [
+                                        "Communication",
+                                        "Teamwork",
+                                        "Problem Solving",
+                                        "Programming",
+                                        "Leadership",
+                                        "Time Management"
+                                    ];
 
-                                    foreach ($languages as $language) {
+                                    foreach ($skills as $skill) {
                                         $checked = (
                                             !$success
-                                            && isset($_POST["languages"])
-                                            && in_array($language, $_POST["languages"])
+                                            && isset($_POST["skills"])
+                                            && in_array($skill, $_POST["skills"])
                                         ) ? "checked" : "";
                                         ?>
 
                                         <div class="form-check form-check-inline">
-                                            <input type="checkbox" class="form-check-input" name="languages[]"
-                                                id="<?php echo strtolower($language); ?>" value="<?php echo $language; ?>"
-                                                <?php echo $checked; ?>>
+                                            <input type="checkbox" class="form-check-input" name="skills[]"
+                                                id="<?php echo strtolower(str_replace(' ', '_', $skill)); ?>"
+                                                value="<?php echo $skill; ?>" <?php echo $checked; ?>>
 
-                                            <label class="form-check-label" for="<?php echo strtolower($language); ?>">
-                                                <?php echo $language; ?>
+                                            <label class="form-check-label"
+                                                for="<?php echo strtolower(str_replace(' ', '_', $skill)); ?>">
+                                                <?php echo $skill; ?>
                                             </label>
                                         </div>
 
                                     <?php } ?>
                                 </div>
+
 
                                 <!-- Comment -->
                                 <div class="mb-4">
@@ -276,6 +309,23 @@ if (isset($_POST["submit"])) {
                                         ?></textarea>
                                 </div>
 
+                                <!-- CV Upload -->
+                                <div class="mb-3">
+                                    <label for="cv" class="form-label">Upload CV (PDF only)</label>
+                                    <input type="file" class="form-control" name="cv" id="cv"
+                                        accept=".pdf,application/pdf" required>
+                                </div>
+
+                                <!-- Certificate Upload -->
+                                <div class="mb-3">
+                                    <label for="certificate" class="form-label">
+                                        Upload Certificate
+                                    </label>
+                                    <input type="file" class="form-control" name="certificate" id="certificate"
+                                        accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required>
+                                </div>
+
+
                                 <!-- Buttons -->
                                 <div class="d-flex gap-2">
                                     <button type="submit" name="submit" class="btn btn-primary">
@@ -286,6 +336,8 @@ if (isset($_POST["submit"])) {
                                         Clear
                                     </button>
                                 </div>
+
+
 
                             </fieldset>
 

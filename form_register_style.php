@@ -309,21 +309,7 @@ if (isset($_POST["submit"])) {
                                         ?></textarea>
                                 </div>
 
-                                <!-- CV Upload -->
-                                <div class="mb-3">
-                                    <label for="cv" class="form-label">Upload CV (PDF only)</label>
-                                    <input type="file" class="form-control" name="cv" id="cv"
-                                        accept=".pdf,application/pdf" required>
-                                </div>
-
-                                <!-- Certificate Upload -->
-                                <div class="mb-3">
-                                    <label for="certificate" class="form-label">
-                                        Upload Certificate
-                                    </label>
-                                    <input type="file" class="form-control" name="certificate" id="certificate"
-                                        accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required>
-                                </div>
+                                
 
 
                                 <!-- Buttons -->
@@ -355,6 +341,20 @@ if (isset($_POST["submit"])) {
         </div>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#fullname").focus();
+            $("#fullname").css("background-color", "red");
+
+            
+        });
+
+
+    </script>
 
 </body>
 
